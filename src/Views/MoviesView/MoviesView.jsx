@@ -6,7 +6,7 @@ import { Link, useLocation, useSearchParams } from 'react-router-dom';
 import { getSerchMovies } from 'FetchFilms/FetchFilms';
 import { useEffect } from 'react';
 import { Container } from './MoviesView.styled';
-import { ToastContainer, toast } from 'react-toastify';
+import {  toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
  const MoviesView = () => {
   const [searchParams, setSearchParams] = useSearchParams();
