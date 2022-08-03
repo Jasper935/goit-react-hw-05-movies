@@ -1,14 +1,16 @@
-import { MovieDetails } from 'Views/MovieDetails/MovieDetails';
+// import  MovieDetails  from 'Views/MovieDetails/MovieDetails';
 import { Route, Routes } from 'react-router-dom';
 // import  HomeView  from '../Views/HomeView/HomeView';
-import { MoviesView } from '../Views/MoviesView/MoviesView';
+// import { MoviesView } from '../Views/MoviesView/MoviesView';
 import { Navigation } from './Navigation/Navigation';
-import { Casts } from './Casts/Casts';
+// import { Casts } from './Casts/Casts';
 import { Revievs } from './Revievs/Revievs';
 import { NotFound } from 'Views/NotFound/NotFound';
 import { lazy, Suspense } from 'react';
 const HomeView = lazy(()=>import('../Views/HomeView/HomeView'))
-
+const MovieDetails = lazy(()=>import('Views/MovieDetails/MovieDetails'))
+const MoviesView = lazy(()=>import('../Views/MoviesView/MoviesView'))
+const Casts = lazy(()=>import('./Casts/Casts'))
 export const App = () => {
   return (
     <>

@@ -1,3 +1,4 @@
+import { PropTypes } from "prop-types";
 export const CastsItem = ({ name, img }) => {
   const IMG = 'https://image.tmdb.org/t/p/w500';
   return (
@@ -14,3 +15,8 @@ export const CastsItem = ({ name, img }) => {
     </>
   );
 };
+
+CastsItem.propTypes={
+  name: PropTypes.string,
+  img: PropTypes.string,
+}

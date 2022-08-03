@@ -5,7 +5,7 @@ import { useState } from 'react';
 import { useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import {Info, ImgAndInf, Casts, Button, Container } from './MovieDetails.styled';
-export const MovieDetails = () => {
+ const MovieDetails = () => {
   const IMG = 'https://image.tmdb.org/t/p/w500';
   const [details, SetDetails] = useState({});
   const { movieId } = useParams();
@@ -39,7 +39,8 @@ export const MovieDetails = () => {
             />
             </div>
           <Info>
-            
+            <h3>User score:</h3>
+            <p>{Math.ceil(Number(details.vote_average)*10)}%</p>
             <h3>Overwievs</h3>
             <p>{details.overview ? details.overview : 'Not found overview'}</p>
             <h4>Genres</h4>
@@ -67,3 +68,5 @@ export const MovieDetails = () => {
     </>
   );
 };
+
+export default MovieDetails

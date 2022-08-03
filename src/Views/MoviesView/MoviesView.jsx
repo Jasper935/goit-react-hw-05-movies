@@ -5,7 +5,7 @@ import { MovieItem } from 'components/MovieItem/MovieItem';
 import { Link, useLocation, useSearchParams } from 'react-router-dom';
 import { getSerchMovies } from 'FetchFilms/FetchFilms';
 import { useEffect } from 'react';
-export const MoviesView = () => {
+ const MoviesView = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   let search = searchParams.get('query') ?? '';
   const location = useLocation();
@@ -41,3 +41,5 @@ export const MoviesView = () => {
     </>
   );
 };
+
+export default MoviesView

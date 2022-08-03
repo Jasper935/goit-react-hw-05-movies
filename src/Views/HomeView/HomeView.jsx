@@ -1,11 +1,9 @@
-import {
-  getPoPMovies
-} from 'FetchFilms/FetchFilms';
+import { getPoPMovies } from 'FetchFilms/FetchFilms';
 import { useState } from 'react';
 import { useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 
- const HomeView = () => {
+const HomeView = () => {
   const [trends, setTrends] = useState([]);
   const location = useLocation();
   useEffect(() => {
@@ -30,4 +28,4 @@ import { Link, useLocation } from 'react-router-dom';
     </ul>
   );
 };
-export default HomeView
+export default HomeView;

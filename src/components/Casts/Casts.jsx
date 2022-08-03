@@ -4,7 +4,7 @@ import { useParams } from 'react-router-dom';
 import { getCastsMovies } from 'FetchFilms/FetchFilms';
 import { useState } from 'react';
 
-export const Casts = () => {
+ const Casts = () => {
   const [casts, setCasts] = useState([]);
   const { movieId } = useParams();
 
@@ -40,3 +40,5 @@ export const Casts = () => {
     </>
   );
 };
+
+export default Casts

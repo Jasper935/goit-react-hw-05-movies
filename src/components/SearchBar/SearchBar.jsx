@@ -1,3 +1,4 @@
+import { PropTypes } from "prop-types";
 export const SearchBar = ({ getSearch }) => {
   const onSubmit = evt => {
     evt.preventDefault();
@@ -11,3 +12,8 @@ export const SearchBar = ({ getSearch }) => {
     </form>
   );
 };
+
+SearchBar.propTypes={
+  getSearch:PropTypes.func.isRequired,
+
+}
