@@ -5,6 +5,7 @@ import { MovieItem } from 'components/MovieItem/MovieItem';
 import { Link, useLocation, useSearchParams } from 'react-router-dom';
 import { getSerchMovies } from 'FetchFilms/FetchFilms';
 import { useEffect } from 'react';
+import { Container } from './MoviesView.styled';
  const MoviesView = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   let search = searchParams.get('query') ?? '';
@@ -21,7 +22,7 @@ import { useEffect } from 'react';
   }, [search]);
 
   return (
-    <>
+    <Container>
       <SearchBar getSearch={getSearch} />
       {movies.length > 0 ? (
         <ul>
@@ -38,7 +39,7 @@ import { useEffect } from 'react';
       ) : (
         <h3>No movies here</h3>
       )}
-    </>
+    </Container>
   );
 };
 
