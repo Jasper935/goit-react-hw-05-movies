@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { useState } from 'react';
-import { useParams, useSearchParams } from 'react-router-dom';
+import { useParams} from 'react-router-dom';
 import { getRewiesMovies } from 'FetchFilms/FetchFilms';
 import { RevievsItem } from 'components/RevievsItem/RevievsItem';
 export const Revievs = () => {
