@@ -6,6 +6,8 @@ import { Link, useLocation, useSearchParams } from 'react-router-dom';
 import { getSerchMovies } from 'FetchFilms/FetchFilms';
 import { useEffect } from 'react';
 import { Container } from './MoviesView.styled';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
  const MoviesView = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   let search = searchParams.get('query') ?? '';
@@ -18,7 +20,12 @@ import { Container } from './MoviesView.styled';
     if (!search) {
       return;
     }
-    getSerchMovies(search).then(res => setMovies(res.results));
+    getSerchMovies(search).then(res => {
+      if(!res.results.length){
+        toast.error('No movies for your request')
+        return
+      }
+      setMovies(res.results)});
   }, [search]);
 
   return (

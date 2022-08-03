@@ -5,6 +5,7 @@ import { useState } from 'react';
 import { useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import {Info, ImgAndInf, Casts, Button, Container } from './MovieDetails.styled';
+import { NotFound } from 'Views/NotFound/NotFound';
  const MovieDetails = () => {
   const IMG = 'https://image.tmdb.org/t/p/w500';
   const [details, SetDetails] = useState({});
@@ -13,12 +14,14 @@ import {Info, ImgAndInf, Casts, Button, Container } from './MovieDetails.styled'
   const navigate = useNavigate();
 
   useEffect(() => {
-    getDetailsMovies(movieId).then(data => SetDetails(data));
+    getDetailsMovies(movieId).then(data =>{
+      
+      SetDetails(data)}).catch(err=>'');
   }, [movieId]);
 
   return (
     <>
-      {details && (
+      {details.id ? (
         <Container>
           <ImgAndInf>
           <div>
@@ -64,7 +67,7 @@ import {Info, ImgAndInf, Casts, Button, Container } from './MovieDetails.styled'
           <Outlet />
           </Casts>
         </Container>
-      )}
+      ):<NotFound/>}
     </>
   );
 };
